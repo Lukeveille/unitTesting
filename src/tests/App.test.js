@@ -30,7 +30,6 @@ describe('renders properly', () => {
 
 describe('hello', () => {
   it('says hello', () => {
-    // hello() === 'Hello';
     expect(hello()).toBe('Hello');
   });
 });
@@ -40,9 +39,9 @@ describe('addition', () => {
     expect(add(2,3)).toBe(5);
   });
   it('does not add numbers and strings', () => {
-    expect(add(2,'3')).toBe(null);
+    expect(add(2,'3')).toBeNull();
   });
   it('does not add numbers and objects', () => {
-    expect(add(2,{})).toBe(null);
+    expect(add(2,{})).toBeFalsy();
   });
 });
