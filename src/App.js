@@ -31,6 +31,14 @@ function mapStateToProps (state) {
   return state
 }
 
-export default connect(mapStateToProps, { initialize })(App)
+export const hello = () => { return 'Hello' }
 
-export let word = 'Hello'
+export const add = (x,y) => {
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    return null;
+  }
+  return x+y;
+}
+
+
+export default connect(mapStateToProps, { initialize })(App)
