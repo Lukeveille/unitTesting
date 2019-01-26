@@ -1,4 +1,4 @@
-import { counter } from '../reducers.js';
+import { counter } from '../reducers/reducers.js';
 
 it('increments by one', () => {
   expect(counter(0, { type: 'INCREMENT' })).toBe(1);
@@ -17,4 +17,8 @@ it('returns null with invalid action type', () => {
 
 it('returns 0 if state undefined', () => {
   expect(counter(undefined, { type: null })).toBe(0);
+});
+
+it('is true', () => {
+  expect(true).toBe(true);
 });
