@@ -1,5 +1,7 @@
-const INITIALIZE = 'INITIALIZE'
-
 export const initialize = () => ({
-  type: INITIALIZE
-})
+  type: 'INITIALIZE'
+});
+
+export const increment = () => ({
+  type: 'INCREMENT'
+});
