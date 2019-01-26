@@ -8,7 +8,6 @@ import routes from '../routes'
 
 import { hello } from '../App';
 import { add } from '../App';
-import App from '../App';
 
 describe('renders properly', () => {
   it('renders without crashing', () => {
@@ -37,6 +36,9 @@ describe('hello', () => {
 describe('addition', () => {
   it('adds two numbers', () => {
     expect(add(2,3)).toBe(5);
+  });
+  it('wont add an incorrect value', () => {
+    expect(add(2,3)).not.toBe(6);
   });
   it('does not add numbers and strings', () => {
     expect(add(2,'3')).toBeNull();
