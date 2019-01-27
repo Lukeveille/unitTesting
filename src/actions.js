@@ -9,9 +9,9 @@ export const initialize = () => ({
 });
 
 export const increment = () => ({
-  type: DECREMENT
+  type: INCREMENT
 });
 
 export const decrement = () => ({
-  type: INCREMENT
+  type: DECREMENT
 });
