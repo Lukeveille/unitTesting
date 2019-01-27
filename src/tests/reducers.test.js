@@ -18,7 +18,3 @@ it('returns null with invalid action type', () => {
 it('returns 0 if state undefined', () => {
   expect(counter(undefined, { type: null })).toBe(0);
 });
-
-it('is true', () => {
-  expect(true).toBe(true);
-});

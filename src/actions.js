@@ -1,7 +1,17 @@
+import {
+  INITIALIZE,
+  DECREMENT,
+  INCREMENT
+} from './actionTypes';
+
 export const initialize = () => ({
-  type: 'INITIALIZE'
+  type: INITIALIZE
 });
 
 export const increment = () => ({
-  type: 'INCREMENT'
+  type: DECREMENT
+});
+
+export const decrement = () => ({
+  type: INCREMENT
 });
