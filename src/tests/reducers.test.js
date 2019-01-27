@@ -10,7 +10,7 @@ it('decrements by one', () => {
   expect(counter(1, { type: 'DECREMENT' })).toBe(0);
 });
 
-it('returns null with invalid action type', () => {
+it('returns current state unchanged with invalid action type', () => {
   expect(counter(0, { type: 'BLAH' })).toBe(0);
   expect(counter(1, { type: 'SOMETHING' })).toBe(1);
 });

@@ -1,5 +1,3 @@
-// import { createStore } from 'redux'
-// import { counter } from './reducers/reducers.js'
 import { applyMiddleware, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { routerMiddleware } from 'react-router-redux'
@@ -22,6 +20,7 @@ export default function configureStore (history) {
 
   const store = createStore(reducer, middleware)
   sagaMiddleware.run(sagas)
+
   // console.log(store.subscribe(counter))
   console.log(store.getState());
   
@@ -29,6 +28,6 @@ export default function configureStore (history) {
 
   console.log(store.getState());
   // console.log(store.replaceReducer())
+
   return store
 }
-
