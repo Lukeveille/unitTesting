@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Counter } from './Counter.js'
-import '../app.css'
+import '../styles/app.css'
 import {
   initialize,
   increment,
