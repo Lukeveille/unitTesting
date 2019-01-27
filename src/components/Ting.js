@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { initialize } from './actions'
-import './app.css'
+import { initialize } from '../actions'
+import '../app.css'
 
 class Ting extends Component {
   componentDidMount () {

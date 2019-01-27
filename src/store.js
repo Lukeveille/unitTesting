@@ -21,13 +21,8 @@ export default function configureStore (history) {
   const store = createStore(reducer, middleware)
   sagaMiddleware.run(sagas)
 
-  // console.log(store.subscribe(counter))
-  console.log(store.getState());
-  
-  console.log(store.dispatch({ type: 'INCREMENT' }));
-
-  console.log(store.getState());
-  // console.log(store.replaceReducer())
+  document.addEventListener('click', () => { store.dispatch({ type: 'INCREMENT' }) });
+  document.addEventListener('keyup', () => { store.dispatch({ type: 'DECREMENT' }) });
 
   return store
 }

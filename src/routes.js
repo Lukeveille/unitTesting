@@ -1,5 +1,5 @@
-import App from './App.js'
-import Ting from './Ting.js'
+import App from './components/App.js'
+import Ting from './components/Ting.js'
 import { Route } from 'react-router'
 import React from 'react'
 
