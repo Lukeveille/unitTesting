@@ -1,9 +1,7 @@
-import {
-  INITIALIZE,
-  DECREMENT,
-  INCREMENT,
-  ADD_TODO
-} from './actionTypes';
+const INITIALIZE = 'INITIALIZE';
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+const ADD_TODO = 'ADD_TODO';
 
 export const initialize = () => ({
   type: INITIALIZE
