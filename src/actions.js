@@ -1,7 +1,8 @@
 import {
   INITIALIZE,
   DECREMENT,
-  INCREMENT
+  INCREMENT,
+  ADD_TODO
 } from './actionTypes';
 
 export const initialize = () => ({
@@ -14,4 +15,8 @@ export const increment = () => ({
 
 export const decrement = () => ({
   type: DECREMENT
+});
+
+export const addTodo = () => ({
+  type: ADD_TODO
 });

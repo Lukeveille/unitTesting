@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Counter } from './Counter.js'
 import '../styles/app.css'
-import {
-  initialize,
-  increment,
-  decrement
-} from '../actions'
+import { initialize, increment, decrement } from '../actions'
 
 class App extends Component {
   componentDidMount () {
@@ -20,8 +16,8 @@ class App extends Component {
         </div>
           <Counter
             value={this.props.counter}
-            onIncrement={this.props.increment}
-            onDecrement={this.props.decrement}
+            increment={this.props.increment}
+            decrement={this.props.decrement}
           />
       </div>
     );
