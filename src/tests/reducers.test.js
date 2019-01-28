@@ -41,6 +41,6 @@ describe('addTodo', () => {
 
   it('adds a to-do list item', () => {
     expect(
-      todos(stateBefore, action)).toBe(stateAfter);
+      todos(stateBefore, action)).toEqual(stateAfter);
   });
 });
