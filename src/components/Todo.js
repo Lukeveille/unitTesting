@@ -4,10 +4,17 @@ let nextTodoId = 0;
 
 export const Todo = ({
   addTodo,
-  todos
+  todos,
+  input
 }) => (
   <div>
-    <button onClick={() => {addTodo('test', nextTodoId++)}}>Add To-Do</button>
+    <input ref={node => { input = node; }} />
+    <button onClick={() => {
+      addTodo(input.value, nextTodoId++);
+      input.value = '';
+    }}>
+      Add To-Do
+    </button>
     <ul>
       {todos.map(todo =>
         <li key={todo.id}>

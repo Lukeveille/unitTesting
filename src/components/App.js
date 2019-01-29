@@ -31,6 +31,7 @@ class App extends Component {
           <Todo 
             addTodo={this.props.addTodo}
             todos={this.props.todos}
+            toggleTodo={this.props.toggleTodo}
           />
       </div>
     );
