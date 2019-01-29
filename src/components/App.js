@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Counter } from './Counter.js'
+import { Todo } from './Todo.js'
 import '../styles/app.css'
 import {
   initialize,
   increment,
-  decrement
+  decrement,
+  addTodo,
+  toggleTodo,
+  showAll,
+  setVisibilityFilter
 } from '../actions'
 
 class App extends Component {
@@ -20,8 +25,12 @@ class App extends Component {
         </div>
           <Counter
             value={this.props.counter}
-            onIncrement={this.props.increment}
-            onDecrement={this.props.decrement}
+            increment={this.props.increment}
+            decrement={this.props.decrement}
+          />
+          <Todo 
+            addTodo={this.props.addTodo}
+            todos={this.props.todos}
           />
       </div>
     );
@@ -32,4 +41,12 @@ function mapStateToProps (state) {
   return state
 }
 
-export default connect(mapStateToProps, { initialize, increment, decrement })(App)
+export default connect(mapStateToProps, {
+  initialize,
+  increment,
+  decrement,
+  addTodo,
+  toggleTodo,
+  showAll,
+  setVisibilityFilter
+})(App)

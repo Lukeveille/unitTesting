@@ -1,6 +1,6 @@
 import { counter, todos } from '../reducers/reducers.js';
 
-describe('counter', () => {
+describe('counter reducer', () => {
   it('increments by one', () => {
     expect(counter(0, { type: 'INCREMENT' })).toBe(1);
     expect(counter(1, { type: 'INCREMENT' })).toBe(2);
@@ -21,26 +21,61 @@ describe('counter', () => {
   });
 });
 
-describe('addTodo', () => {
-  const stateBefore = [];
-  const action = {
-    type: 'ADD_TODO',
-    id: 0,
-    text: 'Learn unit testing'
-  };
-  const stateAfter = [
-    {
+describe('to-do reducer', () => {
+  it('adds to to-do', () => {
+    const stateBefore = [];
+    const action = {
+      type: 'ADD_TODO',
       id: 0,
-      text: 'Learn unit testing',
-      completed: false
-    }
-  ];
+      text: 'Learn unit testing'
+    };
+    const stateAfter = [
+      {
+        id: 0,
+        text: 'Learn unit testing',
+        completed: false
+      }
+    ];
+  
+    Object.freeze(stateBefore);
+    Object.freeze(action);
 
-  Object.freeze(stateBefore);
-  Object.freeze(action);
+    expect(todos(stateBefore, action)).toEqual(stateAfter);
+  });
 
-  it('adds a to-do list item', () => {
-    expect(
-      todos(stateBefore, action)).toEqual(stateAfter);
+  it('toggles to-do', () => {
+    const stateBefore = [
+      {
+        id: 0,
+        text: 'Learn unit testing',
+        completed: false
+      },
+      {
+        id: 1,
+        text: 'Learn Redux',
+        completed: false
+      }
+    ];
+    const action = {
+      type: 'TOGGLE_TODO',
+      id: 1
+    };
+    const stateAfter = [
+      {
+        id: 0,
+        text: 'Learn unit testing',
+        completed: false
+      },
+      {
+        id: 1,
+        text: 'Learn Redux',
+        completed: true
+      }
+    ];
+  
+    Object.freeze(stateBefore);
+    Object.freeze(action);
+  
+    expect(todos(stateBefore, action)).toEqual(stateAfter);
   });
 });
