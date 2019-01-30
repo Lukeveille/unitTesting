@@ -1,12 +1,4 @@
 /* eslint-disable */
-export const counter = (state = 0, action) => {
-  switch (action.type) {
-    case 'INCREMENT': return state + 1;
-    case 'DECREMENT': return state - 1;
-    default: return state;
-  };
-};
-
 const todo = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO': return {
@@ -35,13 +27,3 @@ export const todos = (state = [], action) => {
     default: return state;
   };
 };
-
-export const visibilityFilter = (
-  state = 'SHOW_ALL',
-  action
-) => {
-  switch (action.type) {
-    case 'SET_VISIBILITY_FILTER': return action.filter;
-    default: return state;
-  }
-}
