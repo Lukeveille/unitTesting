@@ -15,10 +15,10 @@ const todo = (state, action) => {
       completed: false
     };
     case 'TOGGLE_TODO':
-    if (state.id !== action.id) {
-      return state;
-    };
-    return { ...state, completed: !state.completed };
+      if (state.id !== action.id) {
+        return state;
+      };
+      return { ...state, completed: !state.completed };
     default: return state;
   };
 };

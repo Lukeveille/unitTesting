@@ -20,12 +20,13 @@ export const decrement = () => ({
 
 export const addTodo = (text, id) => ({
   type: ADD_TODO,
-  text: text,
-  id: id
+  text,
+  id
 });
 
-export const toggleTodo = () => ({
-  type: TOGGLE_TODO
+export const toggleTodo = (id) => ({
+  type: TOGGLE_TODO,
+  id
 });
 
 // export const showAll = () => ({
