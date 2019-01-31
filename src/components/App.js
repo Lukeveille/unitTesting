@@ -44,8 +44,9 @@ class App extends Component {
       {action: showActive, name: 'Active'},
       {action: showCompleted, name: 'Completed'}
     ];
+
     const visibleTodos = this.getVisibleTodos()
-    console.log(this.props)
+
     return (
       <div className="App">
         <div className="App-header">
@@ -69,7 +70,8 @@ class App extends Component {
                 {' '}
                 <FilterLink
                   filter={filter.action}
-                  setVisibilityFilter={setVisibilityFilter}
+                  visibilityFilter={this.props.visibilityFilter}
+                  setVisibilityFilter={this.props.setVisibilityFilter}
                   children={filter.name}
                 />
               </span>
