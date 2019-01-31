@@ -1,9 +1,8 @@
 import React from 'react'
-import { Todo } from '../components/Todo.js'
+import { FilterLink } from '../components/FilterLink.js'
 
 describe('renders properly', () => {
   it('renders without crashing', () => {
-  //   <FilterLink />
-  expect(true);
+    <FilterLink />
   });
 });

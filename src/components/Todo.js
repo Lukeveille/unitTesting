@@ -20,9 +20,7 @@ export const Todo = ({
       {todos.map(todo =>
         <li
           key={todo.id}
-          style={{
-            textDecoration: todo.completed? 'line-through' : 'none'
-          }}
+          style={{ textDecoration: todo.completed? 'line-through' : 'none' }}
           onClick={() => toggleTodo(todo.id)}
         >
         {todo.text}
