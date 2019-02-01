@@ -10,4 +10,4 @@ export const Todo = ({
   >
     {todo.text}
   </li>
-) 
+)

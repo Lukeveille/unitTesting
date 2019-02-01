@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Counter } from './Counter.js'
 import { TodoList } from './TodoList.js'
-import { FilterLink } from './FilterLink.js'
+import { Footer } from './Footer.js'
 import '../styles/app.css'
 import {
   initialize,
@@ -73,22 +73,11 @@ class App extends Component {
             todos={visibleTodos}
             toggleTodo={toggleTodo}
           />
-          <p>
-            Show:
-            {filters.map((filter) => {
-              return (
-              <span key={filter.action}>
-                {' '}
-                <FilterLink
-                  filter={filter.action}
-                  setVisibilityFilter={setVisibilityFilter}
-                  visibilityFilter={visibilityFilter}
-                  children={filter.name}
-                />
-              </span>
-              )
-            })}
-          </p>
+          <Footer
+            filters={filters}
+            visibilityFilter={visibilityFilter}
+            setVisibilityFilter={setVisibilityFilter}
+          />
       </div>
     );
   }
