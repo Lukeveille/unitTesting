@@ -1,8 +1,8 @@
 import React from 'react'
-import { Todo } from '../components/Todo.js'
+import { TodoList } from '../components/TodoList.js'
 
 describe('renders properly', () => {
   it('renders without crashing', () => {
-    <Todo />
+    <TodoList />
   });
 });

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Counter } from './Counter.js'
-import { Todo } from './Todo.js'
+import { TodoList } from './TodoList.js'
 import { FilterLink } from './FilterLink.js'
 import '../styles/app.css'
 import {
@@ -68,7 +68,7 @@ class App extends Component {
             increment={increment}
             decrement={decrement}
           />
-          <Todo
+          <TodoList
             addTodo={addTodo}
             todos={visibleTodos}
             toggleTodo={toggleTodo}
