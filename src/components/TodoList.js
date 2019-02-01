@@ -13,13 +13,6 @@ export const TodoList = ({
       addTodo={addTodo}
       input={input}
     />
-    {/* <input ref={node => { input = node; }} />
-    <button onClick={() => {
-      addTodo(input.value, nextTodoId++);
-      input.value = '';
-    }}>
-      Add To-Do
-    </button> */}
     <ul>
       {todos.map(todo =>
         <Todo
