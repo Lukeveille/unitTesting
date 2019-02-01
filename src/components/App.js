@@ -43,10 +43,19 @@ class App extends Component {
       {action: showActive().type, name: 'Active'},
       {action: showCompleted().type, name: 'Completed'}
     ];
-
+    const {
+      todos,
+      visibilityFilter,
+      increment,
+      decrement,
+      addTodo,
+      toggleTodo,
+      counter,
+      setVisibilityFilter
+    } = this.props;
     const visibleTodos = this.getVisibleTodos(
-      this.props.todos,
-      this.props.visibilityFilter
+      todos,
+      visibilityFilter,
     );
 
     return (
@@ -55,14 +64,14 @@ class App extends Component {
           <h2>Welcome to React/Redux</h2>
         </div>
           <Counter
-            value={this.props.counter}
-            increment={this.props.increment}
-            decrement={this.props.decrement}
+            value={counter}
+            increment={increment}
+            decrement={decrement}
           />
           <Todo
-            addTodo={this.props.addTodo}
+            addTodo={addTodo}
             todos={visibleTodos}
-            toggleTodo={this.props.toggleTodo}
+            toggleTodo={toggleTodo}
           />
           <p>
             Show:
@@ -72,7 +81,8 @@ class App extends Component {
                 {' '}
                 <FilterLink
                   filter={filter.action}
-                  setVisibilityFilter={this.props.setVisibilityFilter}
+                  setVisibilityFilter={setVisibilityFilter}
+                  visibilityFilter={visibilityFilter}
                   children={filter.name}
                 />
               </span>
