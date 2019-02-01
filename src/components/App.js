@@ -17,7 +17,6 @@ import {
 } from '../actions'
 
 class App extends Component {
-
   getVisibleTodos(todos, filter) {
     switch (filter) {
       case 'SHOW_ALL':
@@ -40,12 +39,15 @@ class App extends Component {
   }
   render() {
     const filters = [
-      {action: showAll, name: 'All'},
-      {action: showActive, name: 'Active'},
-      {action: showCompleted, name: 'Completed'}
+      {action: showAll().type, name: 'All'},
+      {action: showActive().type, name: 'Active'},
+      {action: showCompleted().type, name: 'Completed'}
     ];
 
-    const visibleTodos = this.getVisibleTodos()
+    const visibleTodos = this.getVisibleTodos(
+      this.props.todos,
+      this.props.visibilityFilter
+    );
 
     return (
       <div className="App">
@@ -57,9 +59,9 @@ class App extends Component {
             increment={this.props.increment}
             decrement={this.props.decrement}
           />
-          <Todo 
+          <Todo
             addTodo={this.props.addTodo}
-            todos={this.props.todos}
+            todos={visibleTodos}
             toggleTodo={this.props.toggleTodo}
           />
           <p>
@@ -70,7 +72,6 @@ class App extends Component {
                 {' '}
                 <FilterLink
                   filter={filter.action}
-                  visibilityFilter={this.props.visibilityFilter}
                   setVisibilityFilter={this.props.setVisibilityFilter}
                   children={filter.name}
                 />
