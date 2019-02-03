@@ -2,9 +2,9 @@ import React from 'react'
 
 export const FilterLink = ({
   setVisibilityFilter,
-  visibilityFilter,
   filter,
-  children
+  children,
+  visibilityFilter
 }) => {
   return (
     <a href='#'

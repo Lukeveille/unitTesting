@@ -14,9 +14,9 @@ export const Footer = ({
         {' '}
         <FilterLink
           filter={filter.action}
-          setVisibilityFilter={setVisibilityFilter}
           visibilityFilter={visibilityFilter}
           children={filter.name}
+          setVisibilityFilter={setVisibilityFilter}
         />
       </span>
       )
