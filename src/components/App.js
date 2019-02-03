@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Counter } from './Counter.js'
+import { CounterControl } from './CounterControl.js'
 import { TodoList } from './TodoList.js'
 import { Footer } from './Footer.js'
 import '../styles/app.css'
@@ -63,8 +63,8 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome to React/Redux</h2>
         </div>
-          <Counter
-            value={counter}
+          <CounterControl
+            counter={counter}
             increment={increment}
             decrement={decrement}
           />
